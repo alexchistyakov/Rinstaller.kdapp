@@ -14,8 +14,10 @@ fi
 
 #       Start Coding Here...        #
 # --------------------------------- #
-touch $OUT/"10-Starting to Remove App"
-# Code remove commands
+touch $OUT/"33-Removing R"
+sudo apt-get remove -y r-base
+
+touch $OUT/"66-Removing dependencies"
+sudo apt-get autoremove -y --purge r-base
 
 touch $OUT/"100-Finishing Removal"
-# Code last touches commands
