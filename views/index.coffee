@@ -101,17 +101,14 @@ class RInstallerMainView extends KDView
 
     switch @Installer.state
       when NOT_INSTALLED
-        @link.hide()
         @installButton.show()
         @updateProgress message, percentage
       when INSTALLED
-        @link.show()
         @reinstallButton.show()
         @uninstallButton.show()
         @link.setSession()
         @updateProgress message, percentage
       when WORKING
-        @link.hide()
         @Installer.state = @Installer.lastState
         @updateProgress message, percentage
       when FAILED
